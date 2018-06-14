@@ -1,0 +1,15 @@
+{
+	"known_networks": [
+		{
+			"ssid": "Blocky",
+			"password": "HelloBlocky"
+		},
+		{
+			"ssid": "Meo Bu's home",
+			"password": "bebapbegau"
+		}
+	],
+	"device_name": "Blocky rocks",
+	"auth_key": "ByGjpuqh-",
+	"board":"TheShield"
+}
