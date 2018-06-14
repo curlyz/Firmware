@@ -1,0 +1,4 @@
+{
+  "update_list":["config_manager.py","index.html","main.py"],
+  "white_list" :["config.json","user_code.py","user_code_original.py"]
+}
