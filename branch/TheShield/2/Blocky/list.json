@@ -1,0 +1,4 @@
+{
+  "update_list":["Blocky/system.json","Blocky/config_manager.py","Blocky/index.html","Blocky/Main.py","Blocky/MicroWebSrv.py","Blocky/MQTT.py","Blocky/Network.py","main.py"],
+  "white_list" :["config.json","user_code.py","user_code_original.py"],
+}
