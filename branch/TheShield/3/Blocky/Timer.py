@@ -1,12 +1,8 @@
 from machine import Timer 
 from time import ticks_ms
 
-if '_Tasker' not in globals():
-	_Tasker = Timer(-1)
-if 'TaskList' not in globals():
-	TaskList = []
-if 'ScheduleList' not in globals():
-	ScheduleList = []
+TaskList = []
+ScheduleList = []
 if '_TimerInfo' not in globals():
   _TimerInfo = [ticks_ms() ,0 ,None,0,False]
 #TimerInfo contains the last timer sync, the masterclock
@@ -46,7 +42,8 @@ def clock():
 	Handy , it is on _Handler
 """	
 
-
+if '_Tasker' not in globals():
+	_Tasker = Timer(-1)
 	
 def _TaskHandler(source):
 	global TaskList,_TimerInfo
@@ -136,7 +133,7 @@ def AddTask(function,mode,name=None,**kwargs):
 			else :
 				_TimerInfo[3] = _TimerInfo[1] + (TaskList[0][0]-_TimerInfo[1])
 				_TimerInfo[4] = True
-	_Tasker.deinit()
+
 	_Tasker.init(period = (_TimerInfo[3]-_TimerInfo[1]) , mode = Timer.ONE_SHOT , callback = _TaskHandler)
 		
 def UpdateTask ( name , **kwargs ):
@@ -214,7 +211,5 @@ def sync_clock(Force = False):
 				_TimerInfo[3] = _TimerInfo[1] + (TaskList[0][0]-_TimerInfo[1])
 				_TimerInfo[4] = True
 	global _Tasker
-	_Tasker.deinit()
 	_Tasker.init(period = _TimerInfo[3]-_TimerInfo[1] , mode = Timer.ONE_SHOT , callback = _TaskHandler)
       
-
