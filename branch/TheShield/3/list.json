@@ -1,4 +1,4 @@
 {
   "update_list":["Blocky/Blocky.py","Blocky/Button.py","Blocky/Buzzer.py","Blocky/IFTTT.py","Blocky/Light.py","Blocky/MQTT.py","Blocky/Main.py","Blocky/MicroWebSvr.py","Blocky/Music.py","Blocky/Network.py","Blocky/Pin.py","Blocky/RFID.py","Blocky/RGB.py","Blocky/Smoke.py","Blocky/Timer.py","Blocky/WaterSensor.py","Blocky/Weather.py","Blocky/confid_manager.py","Blocky/index.html","main.py","system.json"],
-  "white_list" :["config.json","user_code.py","user_code_original.py"],
+  "white_list" :["config.json","user_code.py","user_code_original.py"]
 }
