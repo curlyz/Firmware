@@ -30,7 +30,6 @@ def run_user_code():
   error = False
   try:
     global network
-    print('1')
     #user_code.bl = network
     exec(open('./user_code.py').read(),globals())
     print('2')
@@ -51,8 +50,8 @@ def run_user_code():
       while True:
         network.process()
         time.sleep_ms(100)
-    except:
-      machine.reset()
+    except :
+      pass#machine.reset()
 
 config_btn = Pin(CONFIG_PIN, Pin.IN)
 
@@ -145,15 +144,18 @@ else: # config btn is not pressed
     if wlan_sta.isconnected():
       print("Connected to Wifi. IP: " + str(wlan_sta.ifconfig()))
       # start network
+      #global network
       network = Blocky(config)
       if not network.connect(): # connect to server
         print('Failed to connect to broker. Enter config mode')
+		
         status_led_blink_timer.deinit()
         status_led.fill((0, 0, 0))
         status_led.write()
         gc.collect()
         import config_manager
       else: # run user code
+        #import firmware
         status_led_blink_timer.deinit()
         status_led.fill((0, 0, 0))
         status_led.write()
@@ -164,6 +166,7 @@ else: # config btn is not pressed
       print('Failed to connect to Wifi')
       status_led_blink_timer.deinit()
       import config_manager
+
 
 
 
