@@ -1,0 +1,5 @@
+{
+	"board" : "TheShield",
+	"firmware" : 2,
+	"auto_update" : True 
+}
