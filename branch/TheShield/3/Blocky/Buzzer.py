@@ -16,7 +16,7 @@ class Buzzer:
 			self.buzzer.value(1)
 		if self.beeptime == 0:
 			return 
-		AddTask(mode='once',function=self._handler,period=self.speed)
+		AddTask(mode='once',function=self._handler,time=self.speed)
 		
 	def beep(self,time=1,speed=200):
 		self.beeptime = time*2
